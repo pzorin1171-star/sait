@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>БИТВА КРЕПОСТЕЙ</title>
+    <title>БИТВА КРЕПОСТЕЙ - Учим программирование через игру</title>
     <style>
         * {
             margin: 0;
@@ -715,28 +715,12 @@
     </footer>
 
     <script>
-        // Простая логика раскрытия контента
+        // Упрощенная логика - блоки работают независимо
         document.querySelectorAll('.card, .feature, .audience-item, .benefit-item').forEach(item => {
             item.addEventListener('click', function() {
-                // Закрываем все остальные элементы
-                document.querySelectorAll('.card, .feature, .audience-item, .benefit-item').forEach(otherItem => {
-                    if (otherItem !== this) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-                
-                // Открываем/закрываем текущий элемент
+                // Просто переключаем состояние текущего элемента
                 this.classList.toggle('active');
             });
-        });
-
-        // Закрытие при клике вне элемента
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.card, .feature, .audience-item, .benefit-item')) {
-                document.querySelectorAll('.card, .feature, .audience-item, .benefit-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-            }
         });
     </script>
 </body>
